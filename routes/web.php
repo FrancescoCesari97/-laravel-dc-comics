@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\ComicController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +17,6 @@ use App\Http\Controllers\ComicController;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+// Comic Resource
+Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');

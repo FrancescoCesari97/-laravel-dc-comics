@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('price');
             $table->string('series');
             $table->date('sale_date');
-            $table->string('type', 50);
+            $table->enum('type', ['comic book', 'graphic novel']);
 
             $table->timestamps();
         });
