@@ -9,3 +9,11 @@
         flex-grow: 1;
     }
 }
+
+
+.comic-cover{
+
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
