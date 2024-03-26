@@ -25,7 +25,14 @@
 
                                     <a class="me-3" href="{{ route('comics.show', $comic) }}"><i
                                             class="fa-regular fa-newspaper"></i></a>
-                                    <a href="{{ route('comics.edit', $comic) }}"><i class="fa-solid fa-wrench"></i></a>
+                                    <a class="me-3" href="{{ route('comics.edit', $comic) }}"><i
+                                            class="fa-solid fa-wrench"></i></a>
+                                    <form class="text-danger" action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn pulsante-cestino"><i class="fa-solid fa-trash"></i></button>
+                                    </form>
+
                                 </div>
 
                             </div>
@@ -38,7 +45,11 @@
                     </div>
                 @endforelse
             </div>
-            {{ $comics->links() }}
+
+            <div class="py-4">
+                {{ $comics->links() }}
+
+            </div>
         </div>
     </section>
 @endsection
