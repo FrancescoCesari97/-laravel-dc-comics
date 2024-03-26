@@ -11,17 +11,17 @@
                 @csrf
                 <div class="col-4">
                     <label class="form-label" for="title">Titolo</label>
-                    <input class="form-control" type="text" id="title" name="title">
+                    <input class="form-control" type="text" id="title" name="title" required>
                 </div>
 
                 <div class="col-4">
                     <label class="form-label" for="sale_date">data</label>
-                    <input class="form-control" type="date" id="sale_date" name="sale_date">
+                    <input class="form-control" type="date" id="sale_date" name="sale_date" required>
                 </div>
 
                 <div class="col-4">
                     <label class="form-label" for="price">prezzo</label>
-                    <input class="form-control" type="text" id="price" name="price">
+                    <input class="form-control" type="text" id="price" name="price" required>
                 </div>
 
                 <div class="col-4">
@@ -32,7 +32,7 @@
 
                 <div class="col-4">
                     <label class="form-label" for="type">Tipo</label>
-                    <select class="form-control" id="type" name="type">
+                    <select class="form-control" id="type" name="type" required>
                         <option value="comic book">comic book</option>
                         <option value="graphic novel">graphic novel</option>
 
@@ -41,7 +41,7 @@
 
                 <div class="col-4">
                     <label class="form-label" for="series">Series</label>
-                    <input class="form-control" type="text" id="series" name="series">
+                    <input class="form-control" type="text" id="series" name="series" required>
                 </div>
 
                 <div class="col-12">
