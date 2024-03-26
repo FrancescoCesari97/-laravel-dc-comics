@@ -19,8 +19,16 @@
 
                             <h2>{{ $comic->series }}</h2>
                             <img class="comic-cover" src="{{ $comic->thumb }}" alt="">
-                            <p>{{ $comic->price }}</p>
-                            <a href="{{ route('comics.show', $comic) }}"><i class="fa-regular fa-newspaper"></i></a>
+                            <div class="p-2">
+                                <p>{{ $comic->price }}</p>
+                                <div class="d-flex ">
+
+                                    <a class="me-3" href="{{ route('comics.show', $comic) }}"><i
+                                            class="fa-regular fa-newspaper"></i></a>
+                                    <a href="{{ route('comics.edit', $comic) }}"><i class="fa-solid fa-wrench"></i></a>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 @empty
