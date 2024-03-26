@@ -5,6 +5,8 @@
 @section('main-content')
     <section>
         <div class="container py-4">
+            <a class="btn btn-primary py-2" href="{{ route('comics.index') }}">torna alla lista</a>
+            <a class="btn btn-primary py-2" href="{{ route('comics.index', $comic) }}">torna al dettaglio</a>
             <h1 class="text-center">Modifica Fumetto {{ $comic->title }}</h1>
 
             <form action="{{ route('comics.update', $comic) }}" class="py-5 row g-5" method="POST">

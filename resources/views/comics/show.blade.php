@@ -9,6 +9,7 @@
         <div class="container py-4">
 
             <a class="btn btn-primary py-2" href="{{ route('comics.index') }}">torna alla lista</a>
+            <a class="btn btn-primary py-2" href="{{ route('comics.edit', $comic) }}">vai alla modifica</a>
             <h1 class=" text-center">{{ $comic->series }}</h1>
 
             <div class="row py-5">
