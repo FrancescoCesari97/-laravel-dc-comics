@@ -60,7 +60,7 @@
 
                 <div class="col-3">
 
-                    <button class="btn btn-success">crea nuovo</button>
+                    <button class="btn btn-success">Modifica</button>
                 </div>
 
             </form>
