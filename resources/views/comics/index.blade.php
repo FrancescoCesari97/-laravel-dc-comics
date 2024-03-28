@@ -29,8 +29,8 @@
                                             class="fa-solid fa-wrench"></i></a>
 
 
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#modal">
+                                    <button type="button" class="text-denger btn btn-link pulsante-cestino"
+                                        data-bs-toggle="modal" data-bs-target="#modal">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                     {{-- <form class="text-danger" action="{{ route('comics.destroy', $comic) }}" method="POST">

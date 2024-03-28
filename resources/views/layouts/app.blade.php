@@ -17,6 +17,21 @@
         @include('partials.header')
 
         <main>
+
+
+            @if (session('message'))
+                <section>
+                    <div class="container my-3">
+                        <div class="alert alert-info alert-dismissible">
+                            <div class="">
+                                {{ session('message') }}
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    </div>
+                </section>
+            @endif
             @yield('main-content')
         </main>
 

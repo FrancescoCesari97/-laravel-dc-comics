@@ -61,7 +61,7 @@ class ComicController extends Controller
 
         $comic->save();
 
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', $comic)->with('message', 'fumetto aggiunto correttamente ');
     }
 
     /**
