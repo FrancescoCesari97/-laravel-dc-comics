@@ -22,7 +22,7 @@
             @if (session('message'))
                 <section>
                     <div class="container my-3">
-                        <div class="alert alert-info alert-dismissible">
+                        <div class="alert {{ session('message-class') }} alert-dismissible">
                             <div class="">
                                 {{ session('message') }}
                             </div>
