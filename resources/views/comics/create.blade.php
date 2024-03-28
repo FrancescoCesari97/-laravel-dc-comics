@@ -11,17 +11,23 @@
                 @csrf
                 <div class="col-4">
                     <label class="form-label" for="title">Titolo</label>
-                    <input class="form-control" type="text" id="title" name="title" required>
+                    <input class="form-control @error('title') is-invalid @enderror" type="text" id="title"
+                        name="title" {{-- required --}}>
+                    <div class="invalid-feedback">titolo mancante o non valido</div>
                 </div>
 
                 <div class="col-4">
                     <label class="form-label" for="sale_date">data</label>
-                    <input class="form-control" type="date" id="sale_date" name="sale_date" required>
+                    <input class="form-control @error('sale_date') is-invalid @enderror" type="date" id="sale_date"
+                        name="sale_date" {{-- required --}}>
+                    <div class="invalid-feedback">data mancante o non valida</div>
                 </div>
 
                 <div class="col-4">
                     <label class="form-label" for="price">prezzo</label>
-                    <input class="form-control" type="text" id="price" name="price" required>
+                    <input class="form-control @error('price') is-invalid @enderror" type="text" id="price"
+                        name="price" {{-- required --}}>
+                    <div class="invalid-feedback">prezzo mancante o non valido</div>
                 </div>
 
                 <div class="col-4">
@@ -32,7 +38,7 @@
 
                 <div class="col-4">
                     <label class="form-label" for="type">Tipo</label>
-                    <select class="form-control" id="type" name="type" required>
+                    <select class="form-control" id="type" name="type" {{-- required --}}>
                         <option value="comic book">comic book</option>
                         <option value="graphic novel">graphic novel</option>
 
@@ -41,7 +47,9 @@
 
                 <div class="col-4">
                     <label class="form-label" for="series">Series</label>
-                    <input class="form-control" type="text" id="series" name="series" required>
+                    <input class="form-control @error('series') is-invalid @enderror" type="text" id="series"
+                        name="series" {{-- required --}}>
+                    <div class="invalid-feedback">serie mancante o non valida</div>
                 </div>
 
                 <div class="col-12">
