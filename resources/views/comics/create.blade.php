@@ -42,8 +42,9 @@
                 <div class="col-4">
                     <label class="form-label" for="type">Tipo</label>
                     <select class="form-control" id="type" name="type" {{-- required --}}>
-                        <option value="comic book">comic book</option>
-                        <option value="graphic novel">graphic novel</option>
+                        <option @if (old('type') == 'comic book') selected @endif value="comic book">comic book</option>
+                        <option @if (old('type') == 'graphic novel') selected @endif value="graphic novel">graphic novel
+                        </option>
 
                     </select>
                 </div>
@@ -57,7 +58,7 @@
 
                 <div class="col-12">
                     <label class="form-label" for="description">Descrizione</label>
-                    <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                    <textarea class="form-control" name="description" id="description" rows="5">{{ old('description') }}</textarea>
                 </div>
 
 

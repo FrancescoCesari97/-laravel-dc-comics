@@ -37,22 +37,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
-            [
-                'title' => 'required|min:5|max:20',
-                'sale_date' => 'required',
-                'price' => 'required',
-                'thumb' => '',
-                'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
-                'series' => 'required',
-                'description' => '',
-            ],
-            [
-                'title.required' => 'il campo è obbligatorio',
-                'title.min' => 'il campo è troppo corto',
-                'title.max' => 'il campo è troppo lungo',
-            ],
-        );
+        $this->validate_form($request);
 
         $data = $request->all();
 
@@ -120,5 +105,25 @@ class ComicController extends Controller
     {
         $comic->delete();
         return redirect()->route('comics.index')->with('message-class', 'alert-danger ')->with('message', 'fumetto eliminato ');
+    }
+
+    private function validate_form($request)
+    {
+        $request->validate(
+            [
+                'title' => 'required|min:5|max:20',
+                'sale_date' => 'required',
+                'price' => 'required',
+                'thumb' => '',
+                'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
+                'series' => 'required',
+                'description' => '',
+            ],
+            [
+                'title.required' => 'il campo è obbligatorio',
+                'title.min' => 'il campo è troppo corto',
+                'title.max' => 'il campo è troppo lungo',
+            ],
+        );
     }
 }
