@@ -12,8 +12,11 @@
                 <div class="col-4">
                     <label class="form-label" for="title">Titolo</label>
                     <input class="form-control @error('title') is-invalid @enderror" type="text" id="title"
-                        name="title" {{-- required --}}>
-                    <div class="invalid-feedback">titolo mancante o non valido</div>
+                        name="title" value="{{ old('title') }}" {{-- required --}}>
+
+                    @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="col-4">
