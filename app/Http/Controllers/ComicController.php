@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -42,7 +43,7 @@ class ComicController extends Controller
                 'sale_date' => 'required',
                 'price' => 'required',
                 'thumb' => '',
-                'type' => 'required',
+                'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
                 'series' => 'required',
                 'description' => '',
             ],
