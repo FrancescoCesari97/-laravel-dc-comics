@@ -27,11 +27,17 @@
                                             class="fa-regular fa-newspaper"></i></a>
                                     <a class="me-3" href="{{ route('comics.edit', $comic) }}"><i
                                             class="fa-solid fa-wrench"></i></a>
-                                    <form class="text-danger" action="{{ route('comics.destroy', $comic) }}" method="POST">
+
+
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#modal">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    {{-- <form class="text-danger" action="{{ route('comics.destroy', $comic) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn pulsante-cestino"><i class="fa-solid fa-trash"></i></button>
-                                    </form>
+                                    </form> --}}
 
                                 </div>
 
@@ -54,6 +60,31 @@
     </section>
 @endsection
 
+@section('modal')
+    <div class="modal" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Attenzione</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>sei sicuro di voler cancellare questo fumetto, non si può più tornare indietro</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger" type="submit">
+                            Delete comics
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
 
 @section('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
